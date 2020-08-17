@@ -17,6 +17,13 @@ import schema from './joi-schema';
 
   app.use("/", requireAuth);
 
+  /**
+   * This filteredimage end point apply filter
+   * to a provided image URL.
+   * Method: GET
+   * Params: image_url: string
+   * Returns: Binary Image
+   */
   app.get( "/filteredimage", async ( req, res ) => {
 
     const validation = schema.validate(req.query);
@@ -44,8 +51,6 @@ import schema from './joi-schema';
 
     res.send("try GET /filteredimage?image_url={{}}")
   } );
-
-  //! END @TODO1
   
   // Root Endpoint
   // Displays a simple message to the user
